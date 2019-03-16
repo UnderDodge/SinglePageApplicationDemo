@@ -4,21 +4,25 @@ package com.kpi.andrusiv.spring.datasource;
 import javax.persistence.*;
 
 @Entity
-public class UsersEntity {
+//@Table(name = "users")
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    //@Column(name = "id")
     private int id;
 
+    //@Column(name = "login")
     private String login;
 
+    //@Column(name = "password")
     private String password;
 
-    UsersEntity(){
+    public Users(){
 
     }
 
-    UsersEntity(int id, String login, String password){
+    public Users(int id, String login, String password){
         this.id=id;
         this.login=login;
         this.password=password;
@@ -30,6 +34,14 @@ public class UsersEntity {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPassword() {
