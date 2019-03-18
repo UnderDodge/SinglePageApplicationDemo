@@ -2,13 +2,14 @@ package com.kpi.andrusiv.spring.datasource;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 //@Table(name = "users")
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     //@Column(name = "id")
     private int id;
 
@@ -18,15 +19,18 @@ public class Users {
     //@Column(name = "password")
     private String password;
 
+    private Date created;
+
     public Users(){
 
     }
 
-    public Users(int id, String login, String password){
-        this.id=id;
+    public Users(String login, String password, Date created){
         this.login=login;
         this.password=password;
+        this.created=created;
     }
+
 
     public String getLogin() {
         return login;
@@ -50,5 +54,13 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 }

@@ -23,4 +23,9 @@ public class BasicLoginService implements LoginService {
         }
 
     }
+
+    @Override
+    public void create(String login, String password) {
+        userDAO.setUser(login,password);
+    }
 }

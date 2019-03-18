@@ -4,10 +4,7 @@ import com.mysql.jdbc.Connection;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,5 +69,10 @@ public class UserDAOImpl implements UserDAO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public void setUser(String login, String password) {
+
     }
 }

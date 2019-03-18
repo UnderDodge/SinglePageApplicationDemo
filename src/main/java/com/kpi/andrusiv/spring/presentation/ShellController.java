@@ -19,6 +19,11 @@ public class ShellController {
         loginService.login(str1, str2);
     }
 
+    @ShellMethod("create")
+    public void create(String str1, String str2){
+        loginService.create(str1, str2);
+    }
+
 
 
 

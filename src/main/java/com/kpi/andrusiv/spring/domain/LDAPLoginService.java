@@ -10,4 +10,9 @@ public class LDAPLoginService implements LoginService {
     public void login(String login, String password) {
         throw new RuntimeException("LDAP login not supported");
     }
+
+    @Override
+    public void create(String login, String password) {
+
+    }
 }
