@@ -11,13 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping(value = "/login")
 public class LoginController {
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String printHello(ModelMap model) {
-        model.addAttribute("message", "Hello Spring MVC Framework!");
-        return "next";
+    @RequestMapping("/")
+    public String printHello() {
+        return "index";
     }
 
 
