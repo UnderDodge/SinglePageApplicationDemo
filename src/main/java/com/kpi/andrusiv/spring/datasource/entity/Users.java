@@ -1,8 +1,9 @@
-package com.kpi.andrusiv.spring.datasource;
+package com.kpi.andrusiv.spring.datasource.entity;
 
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 //@Table(name = "users")
@@ -21,6 +22,9 @@ public class Users {
 
     private Date created;
 
+    @ManyToMany
+    private List<Games> games;
+
     public Users(){
 
     }
@@ -31,6 +35,17 @@ public class Users {
         this.created=created;
     }
 
+    public void addItem(Games gameLib){
+
+    }
+
+    public List<Games> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Games> games) {
+        this.games = games;
+    }
 
     public String getLogin() {
         return login;

@@ -1,6 +1,7 @@
 package com.kpi.andrusiv.spring.datasource;
 
 
+import com.kpi.andrusiv.spring.datasource.entity.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 
@@ -37,5 +38,6 @@ public class HibernateDAOImpl implements UserDAO{
 
         usersRepository.save(new Users(login, encodedPassword, created));
     }
+
 
 }
