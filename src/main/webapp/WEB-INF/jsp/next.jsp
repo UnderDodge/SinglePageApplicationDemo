@@ -3,8 +3,11 @@
 <head>
     <title>Hello World</title>
 </head>
-
 <body>
-<h2>${message}</h2>
+
+<a href="login"><button type="submit">Login</button></a>
+<a href="registration"><button type="submit">Registration</button></a>
+
+<h2>${info}</h2>
 </body>
 </html>
