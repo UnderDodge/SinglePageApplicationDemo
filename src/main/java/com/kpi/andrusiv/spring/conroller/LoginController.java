@@ -1,6 +1,7 @@
 package com.kpi.andrusiv.spring.conroller;
 
 
+import com.kpi.andrusiv.spring.datasource.GamesRepository;
 import com.kpi.andrusiv.spring.datasource.UserDAO;
 import com.kpi.andrusiv.spring.datasource.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class LoginController {
     @Autowired
     UsersRepository usersRepository;
 
+    @Autowired
+    GamesRepository gamesRepository;
+
     @RequestMapping(value = "/login" , method = RequestMethod.GET)
     public String doGet() {
         return "index";
@@ -36,6 +40,7 @@ public class LoginController {
 
         if(userDAO.checkIfUserExists(login, password)) {
             model.put("info", "Login successful | Games: "+usersRepository.findByLogin(login).getGames().get(0).getName());
+            model.put("game1", gamesRepository.findAll());
             return "next";
         } else {
             model.put("info", "Login failed");
