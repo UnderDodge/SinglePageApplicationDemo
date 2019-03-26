@@ -33,17 +33,31 @@
         <div id="homepage">
             <!-- One Quarter -->
             <section id="latest" class="clear">
+                <c:set var="counter" value="0" scope="page" />
                 <c:forEach items="${game1}" var="pr">
+                    <c:choose>
+                    <c:when test="${counter<3}">
                     <article class="one_quarter">
-                        <figure><img src="images/demo/215x315.gif" width="210" height="310" alt="">
+                        <figure><img src="images/${pr.getId()}.jpg" width="210" height="310" alt="">
                             <figcaption>${pr.getName()}</figcaption>
                         </figure>
                     </article>
+                        <c:set var="counter" value="${counter + 1}" scope="page" />
+                    </c:when>
+                    <c:otherwise>
+                        <c:set var="counter" value="${counter=0}" scope="page" />
+                        <article class="one_quarter lastbox">
+                            <figure><img src="images/${pr.getId()}.jpg" width="210" height="310" alt="">
+                                <figcaption>${pr.getName()}</figcaption>
+                            </figure>
+                        </article>
+                    </c:otherwise>
+                    </c:choose>
                 </c:forEach>
             </section>
             <!-- / One Quarter -->
             <section id="shout">
-                <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede estibulum nulla orna nisl velit elit ac aliquat non tincidunt. Namjusto cras urna urnaretra lor urna neque sed quis orci nulla laoremut vitae doloreet condimentumst.</p>
+                <p>Welcome to GamesForRent. Above is our current games list. You can rent any game that is in stock.</p>
             </section>
         </div>
         <!-- main content -->
@@ -100,7 +114,7 @@
 <!-- Footer -->
 <div class="wrapper row3">
     <footer id="footer" class="clear">
-        <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+        <p class="fl_left"><a href="https://github.com/UnderDodge/">Developed by - UnderDodge</a></p>
         <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     </footer>
 </div>

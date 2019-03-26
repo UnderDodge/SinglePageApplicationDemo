@@ -40,7 +40,7 @@ q:after{content:' „'; font-size:26px; line-height:0;}
 div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 
 .row1, .row1 a{color:#C0BAB6; background-color:#333333;}
-.row2{color:#979797; background-color:#FFFFFF;}
+.row2{color:#000000; background-color:#FFFFFF;}
 .row2 a{color:#FF9900; background-color:#FFFFFF;}
 .row3, .row3 a{color:#919191; background-color:#232323;}
 
@@ -99,7 +99,7 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 #container #homepage #latest{}
 #container #homepage #latest article{}
 #container #homepage #latest figure{padding:4px; border:1px solid #D6D6D6; text-align:center;}
-#container #homepage #latest figcaption{padding:5px; text-align:center; color:#979797; background-color:#EEEEEE; text-transform:uppercase; text-align:center;}
+#container #homepage #latest figcaption{padding:5px; text-align:center; color:#000000; background-color:#EEEEEE; text-transform:uppercase; text-align:center;}
 
 /* ------Shout-----*/
 
